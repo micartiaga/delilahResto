@@ -1,4 +1,6 @@
 require('dotenv/config');
+require('./database/connection-DB');
+require('./database/migrations');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app= express();
@@ -9,6 +11,7 @@ const UsersRoute = require('./routes/users');
 const ProductsRoute = require('./routes/products');
 const OrdersRoute = require('./routes/orders');
 
+app.use(bodyParser.json());
 app.use('/usuarios', UsersRoute);
 app.use('/pedidos', OrdersRoute);
 app.use('/menu', ProductsRoute);
