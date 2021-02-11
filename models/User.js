@@ -34,11 +34,11 @@ User.init({
         }       
     },
     adress: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING,
         allowNull: false,
     },
     password: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         allowNull: false,
     },
     admin: {

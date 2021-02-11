@@ -5,7 +5,7 @@ class Token extends Model { }
 Token.init({
     // Model attributes are defined here
     token: {
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING,
         allowNull: false,
     },
     

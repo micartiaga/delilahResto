@@ -11,9 +11,10 @@ const bcrypt = require('bcrypt');
 // });
 
 route.post("/", async (req, res) => {
-
+  
   try {
-    let usuario = await User.findOne({ where: req.body.username });
+    
+    let usuario = await User.findOne({ where: {username: req.body.username} });
     if (usuario) {
       return res.status(409).send({ message: `El usuario ya existe` });
     }
@@ -25,13 +26,14 @@ route.post("/", async (req, res) => {
       phone: req.body.phone,
       adress: req.body.adress,
       password: newPass,
-    })
-    res.json(newUser.username, newUser.fullname);
+    });
+
+    res.json({username: newUser.username, fullname: newUser.fullname});
 
   }
   catch (error) {
-    console.log({ message: error.message });
-    return res.status(409).send({ Error: error.message })
+    console.log(error);
+    return res.status(409).send('No te podes registrar')
   }
 });
 

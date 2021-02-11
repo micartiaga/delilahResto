@@ -10,11 +10,11 @@ Order.init({
         primaryKey: true
     },
     paid_method: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(50),
         allowNull: false,
     },
     state: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(50),
         allowNull: false,
     },
     date: {
