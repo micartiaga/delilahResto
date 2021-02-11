@@ -1,4 +1,4 @@
-const User = require('../../models/User');
+const User = require('../models/User');
 
 const isAdmin = async (req, res, next) => {
    
@@ -16,7 +16,6 @@ const isAdmin = async (req, res, next) => {
         }else{
             res.status(403).send(`Necesitas ser admin para acceder`)
         }
-
      }
      catch (err) {
          res.status(403).send(err.message)

@@ -10,7 +10,6 @@ const cors= require('cors');
 const jwt = require('jsonwebtoken');
 const {auth} = require('./middleware/authentication');
 
-
 const UsersRoute = require('./routes/users');
 const ProductsRoute = require('./routes/products');
 const OrdersRoute = require('./routes/orders');

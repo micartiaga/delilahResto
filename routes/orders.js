@@ -2,6 +2,8 @@ const express = require('express');
 const route = express.Router();
 const connection = require('../database/connection-DB');
 
+const {isAdmin} = require('../middleware/admin');
+
 const orders = require('../controllers/orders/orders');
 const userOrders = require('../controllers/orders/ordersUser');
 const updateOrder = require('../controllers/orders/updateOrder');
@@ -11,9 +13,9 @@ const orderById = require('../controllers/orders/orderById');
 
 
 route.use('/add', addOrder);
-route.use('/delete', deleteOrder);
-route.use('/update', updateOrder);
-route.use('/orders', orders);
+route.use('/delete', isAdmin, deleteOrder);
+route.use('/update', isAdmin, updateOrder);
+route.use('/all', isAdmin, orders);
 route.use('/userOrders', userOrders);
 route.use('/order', orderById);
 
