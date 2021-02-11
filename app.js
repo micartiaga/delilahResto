@@ -7,11 +7,14 @@ const bodyParser = require('body-parser');
 const app= express();
 const port = process.env.PORT || 3000;
 const cors= require('cors');
+const jwt = require('jsonwebtoken');
+
 
 const UsersRoute = require('./routes/users');
 const ProductsRoute = require('./routes/products');
 const OrdersRoute = require('./routes/orders');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use('/usuarios', UsersRoute);
 app.use('/pedidos', OrdersRoute);
