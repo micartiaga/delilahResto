@@ -4,10 +4,6 @@ const sequelize = require('../database/connection-DB');
 class Token extends Model { }
 Token.init({
     // Model attributes are defined here
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
     token: {
         type: DataTypes.STRING(100),
         allowNull: false,

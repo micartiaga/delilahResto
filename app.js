@@ -1,5 +1,6 @@
 require('dotenv/config');
 require('./database/connection-DB');
+require('./asociations');
 require('./database/migrations');
 const express = require('express');
 const bodyParser = require('body-parser');
