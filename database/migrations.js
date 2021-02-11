@@ -11,7 +11,6 @@ const Order_meal = require('../models/Orders_Meals');
     await Order.sync();
     await Token.sync();
     await Order_meal.sync();
-
    
 })();
 
