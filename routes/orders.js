@@ -11,7 +11,6 @@ const deleteOrder = require('../controllers/orders/deleteOrder');
 const addOrder = require('../controllers/orders/newOrder');
 const orderById = require('../controllers/orders/orderById');
 
-
 route.use('/add', addOrder);
 route.use('/delete', isAdmin, deleteOrder);
 route.use('/update', isAdmin, updateOrder);
@@ -19,5 +18,5 @@ route.use('/all', isAdmin, orders);
 route.use('/userOrders', userOrders);
 route.use('/order', orderById);
 
-
 module.exports = route;
+

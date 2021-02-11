@@ -16,7 +16,7 @@ route.use('/add', register);
 route.use('/delete',auth, deleteUser);
 route.use('/edit', auth,  editUser);
 route.use('/login', login);
-route.use('/all', auth, isAdmin, users);
+route.use('/all', auth,  isAdmin, users);
 
 
 module.exports = route;

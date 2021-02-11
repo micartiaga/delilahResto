@@ -1,13 +1,23 @@
 const express = require('express');
 const route = express.Router();
-const connection = require('../../database/connection-DB');
+const User = require('../../models/User');
 
 
 route.get("/", async (req, res)=>{
-    res.send("Buenas soy todos los usuarios");
+
+    try{
+            const users = await User.findAll({
+                attributes:{
+                    exclude: ['password', 'user_id', 'admin', 'createdAt', 'updatedAt']
+                }
+            });
+        
+            res.json({users: users});
+    }
+    catch(err){
+        res.sendStatus(404);
+    }
 });
-
-
 
 
 
