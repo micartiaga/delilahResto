@@ -53,7 +53,7 @@ User.init({
     // We need to pass the connection instance
     modelName: 'User',
     // We need to choose the model name
-    tableName: 'Usuarios',
+    tableName: 'usuarios',
 });
 
 // Crear la tabla "usuarios" en la base de datos, si no existe
