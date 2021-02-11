@@ -8,6 +8,7 @@ const app= express();
 const port = process.env.PORT || 3000;
 const cors= require('cors');
 const jwt = require('jsonwebtoken');
+const {auth} = require('./middleware/authentication');
 
 
 const UsersRoute = require('./routes/users');
@@ -17,8 +18,8 @@ const OrdersRoute = require('./routes/orders');
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/usuarios', UsersRoute);
-app.use('/pedidos', OrdersRoute);
-app.use('/menu', ProductsRoute);
+app.use('/pedidos', auth, OrdersRoute);
+app.use('/menu', auth, ProductsRoute);
 
 app.get("/", (req, res)=>{
     res.send("Buenas");
