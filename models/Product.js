@@ -27,7 +27,4 @@ Product.init({
     tableName: 'menu',
 });
 
-// Crear la tabla "usuarios" en la base de datos, si no existe
-// Product.sync({ force: false })
-
 module.exports = Product;

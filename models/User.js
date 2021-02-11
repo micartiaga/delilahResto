@@ -56,7 +56,4 @@ User.init({
     tableName: 'usuarios',
 });
 
-// Crear la tabla "usuarios" en la base de datos, si no existe
-// User.sync({ force: false })
-
 module.exports = User;

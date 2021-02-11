@@ -7,7 +7,7 @@ const Token = require('./models/Tokens');
 Order.belongsToMany(Product, { through: "Orders_Meals"});
 Product.belongsToMany(Order, { through: "Orders_Meals"});
 
-User.hasOne(Token);
+User.hasMany(Token);
 
 User.hasMany(Order, {as : "pedidos"});
 

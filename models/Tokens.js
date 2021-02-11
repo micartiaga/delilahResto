@@ -18,7 +18,4 @@ Token.init({
     tableName: 'tokens',
 });
 
-// Crear la tabla "usuarios" en la base de datos, si no existe
-// Product.sync({ force: false })
-
 module.exports = Token;
