@@ -6,10 +6,6 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 
-// route.get("/", async (req, res) => {
-//   res.send("Buenas te podes registrar aca");
-// });
-
 route.post("/", async (req, res) => {
   
   try {

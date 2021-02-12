@@ -12,6 +12,7 @@ Product.init({
     meal: {
         type: DataTypes.STRING(50),
         allowNull: false,
+        unique: true
     },
     price: {
         type: DataTypes.FLOAT,

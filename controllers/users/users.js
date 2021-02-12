@@ -2,7 +2,6 @@ const express = require('express');
 const route = express.Router();
 const User = require('../../models/User');
 
-
 route.get("/", async (req, res)=>{
 
     try{
@@ -12,12 +11,11 @@ route.get("/", async (req, res)=>{
                 }
             });
         
-            res.json({users: users});
+            return res.json({users: users});
     }
     catch(err){
-        res.sendStatus(404);
+       return res.sendStatus(404);
     }
 });
-
 
 module.exports = route;

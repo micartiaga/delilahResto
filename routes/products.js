@@ -1,6 +1,5 @@
 const express = require('express');
 const route = express.Router();
-const connection = require('../database/connection-DB');
 const {isAdmin} = require('../middleware/admin');
 
 const menu = require('../controllers/products/products');
