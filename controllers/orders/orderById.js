@@ -12,18 +12,20 @@ route.get("/", async (req, res) => {
         let username = req.body.username;
         let usuario = await User.findOne(
             {
-                where: {username:username},
-                attributes: ["username"],
+                where: { username: username },
+                attributes: ["username", "email", "adress", "fullname", "phone"],
                 include: [
                     {
                         model: Order, 
-                        include: [{ model: Product, attributes: ["paidMethod", "state", "totalPrice"]}]
+                        where: {id:req.body.orderId},
+                        include: [{ model: Product, attributes:  ["meal", "price"] }],
+                        attributes: ["paidMethod", "state", "totalPrice"]
                     }
                 ]
             });
-            
-            return res.status(200).json(usuario);
-      
+
+        return res.status(200).json(usuario);
+
     }
     catch (error) {
         console.log(error);
