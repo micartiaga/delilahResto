@@ -15,9 +15,7 @@ Order.init({
     },
     totalPrice: {
         type: DataTypes.INTEGER
-    }
-
-    
+    }    
 }, {
     // Other model options go here
     sequelize,
