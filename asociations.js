@@ -11,4 +11,4 @@ Product.belongsToMany(Order, { through: OrdersAndMeals});
 User.hasMany(Token);
 
 User.hasMany(Order);
-
+Order.belongsTo(User);

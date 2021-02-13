@@ -12,7 +12,7 @@ const orderById = require('../controllers/orders/orderById');
 route.use('/add', addOrder);
 route.use('/delete', isAdmin, deleteOrder);
 route.use('/update', isAdmin, updateOrder);
-route.use('/all', isAdmin, orders);
+route.use('/all', isAdmin,  orders);
 route.use('/userOrders', userOrders);
 route.use('/details', orderById);
 
