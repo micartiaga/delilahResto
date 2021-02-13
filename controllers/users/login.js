@@ -16,6 +16,7 @@ route.get("/", async (req, res) => {
         }
         // VALIDANDO CONTRASEÑA
         let pass = req.body.password;
+
         let userDBPass = usuario.dataValues.password;
         if (bcrypt.compareSync(pass, userDBPass)) {
 
@@ -27,7 +28,7 @@ route.get("/", async (req, res) => {
             });
 
             usuario.addToken(userToken);
-            return res.status(201).json({ username: username, accessToken: accessToken })
+            return res.status(201).json({ username: username, fullname: usuario.fullname, email:usuario.email, phone:usuario.phone, adress:usuario.adress, accessToken: accessToken })
         }
     }
     catch (error) {
