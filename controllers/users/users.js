@@ -7,7 +7,7 @@ route.get("/", async (req, res)=>{
     try{
             const users = await User.findAll({
                 attributes:{
-                    exclude: ['password', 'user_id', 'admin', 'createdAt', 'updatedAt']
+                    exclude: ['password', 'id', 'admin', 'createdAt', 'updatedAt']
                 }
             });
         

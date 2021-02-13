@@ -25,7 +25,7 @@ Product.init({
     // We need to pass the connection instance
     modelName: 'Product',
     // We need to choose the model name
-    tableName: 'menu',
+    tableName: 'Menu',
 });
 
 module.exports = Product;

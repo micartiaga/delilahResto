@@ -16,27 +16,27 @@ route.put("/", async (req, res) => {
             return res.status(404).send("Agregar info para editar")
         };
 
-         if( req.body.phone){
-             usuario.phone = req.body.phone;
-         }
-         if( req.body.email){
+        if (req.body.phone) {
+            usuario.phone = req.body.phone;
+        }
+        if (req.body.email) {
             usuario.email = req.body.email;
         }
-        if( req.body.adress){
+        if (req.body.adress) {
             usuario.adress = req.body.adress;
         }
-        if( req.body.fullname){
+        if (req.body.fullname) {
             usuario.fullname = req.body.fullname;
         }
 
-        await usuario.save( { fields: ["fullname", "email", "phone", "adress"]});
+        await usuario.save({ fields: ["fullname", "email", "phone", "adress"] });
         await usuario.reload();
 
         return res.status(201).send("Usuario editado con éxito");
     }
 
     catch (error) {
-        res.status(404).send("Debes ingresar con un usuario");
+        return res.status(404).send("Debes ingresar con un usuario");
     }
 
 });

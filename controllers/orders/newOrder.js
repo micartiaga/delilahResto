@@ -8,7 +8,9 @@ route.post("/", async (req, res) => {
     // input req.body.username / req.body.platos  / req.body.paid_method
     try {
         const usuario = await User.findOne({ where: { username: req.body.username } });
-    
+
+        console.log ("ENTRE AL TRY");
+
         if (!req.body.platos) {
             return res.status(404).send("Agregue platos a su pedido.")
         };
@@ -38,7 +40,7 @@ route.post("/", async (req, res) => {
         console.log(totalPrice);
 
         pedido.addProducts(platos);
-        usuario.addPedidos(pedido);
+        usuario.addOrders(pedido);
 
         return res.json({ paid_method: pedido.paid_method, total_price: pedido.total_price, message: "Orden creada con éxito." });
 

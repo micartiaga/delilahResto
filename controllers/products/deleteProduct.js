@@ -7,6 +7,7 @@ route.delete("/", async (req, res) => {
 
     try {
         let meal = req.body.meal;
+        
         let plato = await Product.findOne({ where: { meal: meal } });
 
         // VALIDANDO SI EXISTE EL PLATO

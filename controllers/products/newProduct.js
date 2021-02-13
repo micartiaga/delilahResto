@@ -1,4 +1,3 @@
-
 const express = require('express');
 const route = express.Router();
 const Product = require('../../models/Product');
@@ -16,8 +15,7 @@ route.post("/", async (req, res) => {
             meal: req.body.meal,
             price: req.body.price,
         });
-        res.json({ meal: newPlato.meal, price: newPlato.price, message: "Plato ingresado con éxito." });
-
+        return res.json({ meal: newPlato.meal, price: newPlato.price, message: "Plato ingresado con éxito." });
 
     }
     catch (error) {

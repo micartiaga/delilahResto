@@ -1,7 +1,6 @@
 require('dotenv/config');
 const express = require('express');
 const route = express.Router();
-const connection = require('../../database/connection-DB');
 const bcrypt = require('bcrypt');
 const User = require('../../models/User');
 const Token = require('../../models/Tokens');
@@ -11,7 +10,7 @@ route.get("/", async (req, res) => {
 
     try {
         let username = req.body.username;
-        let usuario = await User.findOne({ where: {username: username }});
+        let usuario = await User.findOne({ where: { username: username } });
         // VALIDANDO SI EXISTE EL USUARIO
         if (!usuario) {
             return res.status(404).send({ Error: error.message })
@@ -20,18 +19,17 @@ route.get("/", async (req, res) => {
         let pass = req.body.password;
         let userDBPass = usuario.dataValues.password;
         if (bcrypt.compareSync(pass, userDBPass)) {
-            // CREO LOS TOKEN
 
-            const accessToken = jwt.sign({username: username}, process.env.TOKEN, { expiresIn: "1h" });
-            // const temporalToken = jwt.sign({username: username}, process.env.TOKEN_TEMP, );
+            // CREO LOS TOKEN
+            const accessToken = jwt.sign({ username: username }, process.env.TOKEN, { expiresIn: "1h" });
 
             const userToken = await Token.create({
                 token: accessToken
             });
 
             usuario.addToken(userToken);
-            return res.status(201).json({ username: username, accessToken: accessToken})      
-            // return res.status(201).json({ username: username, accessToken: accessToken, temporalToken: temporalToken })         
+            return res.status(201).json({ username: username, accessToken: accessToken })
+
         }
 
     }

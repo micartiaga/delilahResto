@@ -3,12 +3,7 @@ const sequelize = require('../database/connection-DB');
 
 class User extends Model { }
 User.init({
-    // Model attributes are defined here
-    // user_id: {
-    //     type: DataTypes.INTEGER,
-    //     autoIncrement: true,
-    //     primaryKey: true
-    // },
+    
     username: {
         type: DataTypes.STRING(30),
         allowNull: false,
@@ -53,7 +48,7 @@ User.init({
     // We need to pass the connection instance
     modelName: 'User',
     // We need to choose the model name
-    tableName: 'usuarios',
+    tableName: 'Usuarios',
 });
 
 module.exports = User;

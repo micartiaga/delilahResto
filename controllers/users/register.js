@@ -1,8 +1,6 @@
 const express = require('express');
 const route = express.Router();
-const connection = require('../../database/connection-DB');
 const User = require('../../models/User');
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 
@@ -24,7 +22,7 @@ route.post("/", async (req, res) => {
       password: newPass,
     });
 
-    res.json({username: newUser.username, fullname: newUser.fullname});
+    return res.json({username: newUser.username, fullname: newUser.fullname});
 
   }
   catch (error) {

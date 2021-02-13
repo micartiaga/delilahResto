@@ -1,11 +1,9 @@
 require('dotenv/config');
 const express = require('express');
 const route = express.Router();
-const connection = require('../../database/connection-DB');
-const bcrypt = require('bcrypt');
 const User = require('../../models/User');
 const Token = require('../../models/Tokens');
-const jwt = require('jsonwebtoken');
+
 
 route.get("/", async (req, res) => {
 

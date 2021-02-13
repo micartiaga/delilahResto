@@ -2,7 +2,7 @@ const User = require('../models/User');
 const Product = require('../models/Product');
 const Order = require('../models/Order');
 const Token = require('../models/Tokens');
-const Orders_Meals = require('../models/Orders_Meals');
+const OrdersAndMeals = require('../models/Orders_Meals');
 
 (async () => {
 
@@ -10,7 +10,7 @@ const Orders_Meals = require('../models/Orders_Meals');
     await Product.sync();
     await Order.sync();
     await Token.sync();
-    await Orders_Meals.sync();
+    await OrdersAndMeals.sync();
    
 })();
 

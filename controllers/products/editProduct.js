@@ -16,11 +16,9 @@ route.put("/", async (req, res) => {
             return res.status(404).send("Agregar info para editar")
         };
 
-         if( req.body.price){
-             plato.price = req.body.price;
-         }
+        plato.price = req.body.price;
 
-        await plato.save( { fields: ["price"]});
+        await plato.save({ fields: ["price"] });
         await plato.reload();
 
         return res.status(201).send("Plato editado con éxito");

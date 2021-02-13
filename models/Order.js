@@ -3,13 +3,8 @@ const sequelize = require('../database/connection-DB');
 
 class Order extends Model { }
 Order.init({
-    // Model attributes are defined here
-    // order_id: {
-    //     type: DataTypes.INTEGER,
-    //     autoIncrement: true,
-    //     primaryKey: true
-    // },
-    paid_method: {
+   
+    paidMethod: {
         type: DataTypes.STRING(50),
         allowNull: false,
     },
@@ -18,7 +13,7 @@ Order.init({
         allowNull: false,
         defaultValue: "NUEVO"
     },
-    total_price: {
+    totalPrice: {
         type: DataTypes.INTEGER
     }
 

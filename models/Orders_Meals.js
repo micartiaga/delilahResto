@@ -1,15 +1,15 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../database/connection-DB');
 
-class Orders_Meals extends Model { }
-Orders_Meals.init({
+class OrdersAndMeals extends Model { }
+OrdersAndMeals.init({
     // Model attributes are defined here
-    // order_id: {
+    // orderId: {
     //     type: DataTypes.INTEGER,
     //     allowNull: false
        
     // },
-    // product_id: {
+    // productId: {
     //     type: DataTypes.INTEGER,
     //     allowNull: false
     // },
@@ -18,9 +18,9 @@ Orders_Meals.init({
     // Other model options go here
     sequelize,
     // We need to pass the connection instance
-    modelName: 'Orders_Meals',
+    modelName: 'OrdersAndMeals',
     // We need to choose the model name
-    tableName: 'Orders_Meals',
+    tableName: 'OrdersAndMeals',
 });
 
-module.exports = Orders_Meals;
+module.exports = OrdersAndMeals;

@@ -8,7 +8,7 @@ route.get("/", async (req, res) => {
     try {
         const platos = await Product.findAll({
             attributes: {
-                exclude: ['product_id', 'createdAt', 'updatedAt']
+                exclude: ['id', 'createdAt', 'updatedAt']
             }
         });
 
