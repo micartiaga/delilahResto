@@ -3,7 +3,6 @@ const sequelize = require('../database/connection-DB');
 
 class Product extends Model { }
 Product.init({
-    // Model attributes are defined here
     // product_id: {
     //     type: DataTypes.INTEGER,
     //     autoIncrement: true,
@@ -18,13 +17,10 @@ Product.init({
         type: DataTypes.FLOAT,
         allowNull: false,
     },
-    
+
 }, {
-    // Other model options go here
     sequelize,
-    // We need to pass the connection instance
     modelName: 'Product',
-    // We need to choose the model name
     tableName: 'Menu',
 });
 

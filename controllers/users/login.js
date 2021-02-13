@@ -7,7 +7,6 @@ const Token = require('../../models/Tokens');
 const jwt = require('jsonwebtoken');
 
 route.get("/", async (req, res) => {
-
     try {
         let username = req.body.username;
         let usuario = await User.findOne({ where: { username: username } });
@@ -21,7 +20,7 @@ route.get("/", async (req, res) => {
         if (bcrypt.compareSync(pass, userDBPass)) {
 
             // CREO LOS TOKEN
-            const accessToken = jwt.sign({ username: username }, process.env.TOKEN, { expiresIn: "1h" });
+            const accessToken = jwt.sign({ username: username }, process.env.TOKEN, { expiresIn: '1h' });
 
             const userToken = await Token.create({
                 token: accessToken
@@ -29,15 +28,12 @@ route.get("/", async (req, res) => {
 
             usuario.addToken(userToken);
             return res.status(201).json({ username: username, accessToken: accessToken })
-
         }
-
     }
     catch (error) {
         console.log({ message: error.message });
         return res.status(404).send({ Error: error.message })
     }
-
 });
 
 module.exports = route;

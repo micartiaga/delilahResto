@@ -2,9 +2,7 @@ const express = require('express');
 const route = express.Router();
 const Product = require('../../models/Product');
 
-
 route.get("/", async (req, res) => {
-
     try {
         const platos = await Product.findAll({
             attributes: {
@@ -12,13 +10,12 @@ route.get("/", async (req, res) => {
             }
         });
 
-       return res.status(200).json(platos);
-       
+       return res.status(200).json(platos); 
     }
-    catch (err) {
+    catch (error) {
+        console.log(error)
        return res.sendStatus(404);
     }
 });
-
 
 module.exports = route;

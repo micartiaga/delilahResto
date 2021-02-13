@@ -3,7 +3,6 @@ const sequelize = require('../database/connection-DB');
 
 class User extends Model { }
 User.init({
-    
     username: {
         type: DataTypes.STRING(30),
         allowNull: false,
@@ -24,9 +23,9 @@ User.init({
     phone: {
         type: DataTypes.INTEGER(30),
         allowNull: false,
-        validate:{
+        validate: {
             isNumeric: true
-        }       
+        }
     },
     adress: {
         type: DataTypes.STRING,
@@ -41,7 +40,7 @@ User.init({
         allowNull: true,
         defaultValue: false
     },
-    
+
 }, {
     // Other model options go here
     sequelize,
