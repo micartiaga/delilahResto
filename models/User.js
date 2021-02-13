@@ -4,11 +4,11 @@ const sequelize = require('../database/connection-DB');
 class User extends Model { }
 User.init({
     // Model attributes are defined here
-    user_id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
+    // user_id: {
+    //     type: DataTypes.INTEGER,
+    //     autoIncrement: true,
+    //     primaryKey: true
+    // },
     username: {
         type: DataTypes.STRING(30),
         allowNull: false,

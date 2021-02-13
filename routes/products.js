@@ -10,7 +10,7 @@ const deleteMenu = require('../controllers/products/deleteProduct');
 
 route.use('/', menu);
 route.use('/edit', isAdmin, editMenu);
-route.use('/add', isAdmin, newMenu);
+route.use('/add',  newMenu);
 route.use('/delete', isAdmin, deleteMenu); 
 
 

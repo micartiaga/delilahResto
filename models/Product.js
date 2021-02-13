@@ -4,11 +4,11 @@ const sequelize = require('../database/connection-DB');
 class Product extends Model { }
 Product.init({
     // Model attributes are defined here
-    product_id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
+    // product_id: {
+    //     type: DataTypes.INTEGER,
+    //     autoIncrement: true,
+    //     primaryKey: true
+    // },
     meal: {
         type: DataTypes.STRING(50),
         allowNull: false,

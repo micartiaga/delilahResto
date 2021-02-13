@@ -4,11 +4,11 @@ const sequelize = require('../database/connection-DB');
 class Order extends Model { }
 Order.init({
     // Model attributes are defined here
-    order_id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
+    // order_id: {
+    //     type: DataTypes.INTEGER,
+    //     autoIncrement: true,
+    //     primaryKey: true
+    // },
     paid_method: {
         type: DataTypes.STRING(50),
         allowNull: false,
@@ -16,15 +16,9 @@ Order.init({
     state: {
         type: DataTypes.STRING(50),
         allowNull: false,
-    },
-    date: {
-        type: DataTypes.DATE,
-        allowNull: false,    
-    },
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        defaultValue: "NUEVO"
     }
+
     
 }, {
     // Other model options go here
@@ -32,7 +26,7 @@ Order.init({
     // We need to pass the connection instance
     modelName: 'Order',
     // We need to choose the model name
-    tableName: 'pedidos',
+    tableName: 'Orders',
 });
 
 module.exports = Order;
