@@ -17,6 +17,9 @@ Order.init({
         type: DataTypes.STRING(50),
         allowNull: false,
         defaultValue: "NUEVO"
+    },
+    total_price: {
+        type: DataTypes.INTEGER
     }
 
     

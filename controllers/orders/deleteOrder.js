@@ -1,10 +1,38 @@
+require('dotenv/config');
 const express = require('express');
 const route = express.Router();
-const connection = require('../../database/connection-DB');
+const User = require('../../models/User');
+const Order = require('../../models/Order');
 
+route.delete("/", async (req, res) => {
 
-route.get("/", async (req, res)=>{
-    res.send("Rechaza el pedido");
+    try {
+        let username = req.body.username;
+        let usuario = await User.findOne({ where: {username: username }});
+        
+        // VALIDANDO SI EXISTE EL USUARIO
+        
+        if (!usuario) {
+            return res.status(404).send({ Error: error.message })
+        };
+        
+        let orderId = req.body.order_id;
+        let pedido = await Order.findOne({ where: { id:orderId}});
+
+        if(!pedido){
+            return res.status(404).send("El pedido no existe.");
+        }
+
+        pedido.destroy();
+        return res.status(200).send("El pedido fue rechazado y eliminado.");
+
+    }
+    catch (error) {
+        console.log({ message: error.message });
+        return res.status(404).send("Ha habido un error, no se puede eliminar su pedido.")
+    }
 });
+
+module.exports = route;
 
 module.exports = route;

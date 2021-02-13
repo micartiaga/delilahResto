@@ -12,7 +12,7 @@ route.get("/", async (req, res) => {
             }
         });
 
-       return res.json(platos);
+       return res.status(200).json(platos);
        
     }
     catch (err) {

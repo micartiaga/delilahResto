@@ -16,7 +16,7 @@ route.use('/delete', isAdmin, deleteOrder);
 route.use('/update', isAdmin, updateOrder);
 route.use('/all', isAdmin, orders);
 route.use('/userOrders', userOrders);
-route.use('/order', orderById);
+route.use('/details', orderById);
 
 module.exports = route;
 
