@@ -37,6 +37,7 @@
 
 
 1. Instale [nodejs](https://nodejs.org) o verifique si ya lo tiene instalado en el terminal ingresando el comando
+
 ```bash
 node --version
 ```
@@ -45,7 +46,9 @@ node --version
 
 ```bash
 git clone https://github.com/micartiaga/delilahResto.git
+
 cd delilahResto
+
 npm install
 ```
 
