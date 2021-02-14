@@ -13,7 +13,7 @@
 - Postman para manejo de endpoints y testing
 - Git
 
-  NPM PACKAGES: 
+  ### NPM PACKAGES: 
   
 - Express : Framework that provides an easy-way to handle request and managing routes.
 - Sequelize: ORM for MySQL connection and querying.
@@ -71,7 +71,7 @@ TOKEN = *firma secreta para encriptar el token*
 KEY= *contraseña para crear un usuario admin*
 ```
 
-IMPORTANTE!
+##### IMPORTANTE!
 
 - Modificar sólo lo indicado y no el nombre de los campos del .env.
 - Ejecutar node generate-secret.js para obtener un string random y completar TOKEN del .env
@@ -83,14 +83,14 @@ Una vez instalada la base y configurado el archivo *.env*, la aplicación crear�
 
 En caso de ejecutar las Querys del archivo seed también se crearán las tablas y las relaciones, además de los datos necesarios para comenzar a usar la base de datos.
 
-IMPORTANTE!
+##### IMPORTANTE!
 
 Es necesario que usted ingrese datos a la base de datos, puede hacerlo a través de POSTMAN con los métodos que figuran más abajo. 
 Para crear platos del menu, debe antes crear un usuario admin; y para realizar pedidos, debe antes crear un usuario regular. 
 
 #### ENDPOINTS
 
-Usuarios:
+##### Usuarios:
 
 ('POST/usuarios/add') Para registrar un usuario. 
 ('POST/usuarios/addAdmin') Para registrar un usuario admin. Recordá enviar como parámetro en el body la "key" que debe coincidir con KEY del archivo .env 
@@ -99,14 +99,14 @@ Usuarios:
 ('PUT/usuarios/edit') Necesita autenticación. Un usuario puede editar su adress, phone, email y fullname.
 ('DELETE/usuarios/delete') Necesita autenticación. Un usuario puede eliminarse. 
 
-Productos: Necesita autenticación.
+##### Productos: Necesita autenticación.
 
 ('POST/menu/add') Sólo para admin. Necesita autenticación. Permite ingresar platos al menú. 
 ('PUT/menu/edit') Sólo para admin. Necesita autenticación. Permite modifiar el precio de un plato. 
 ('DELETE/menu/delete') Sólo para admin. Necesita autenticación. Permite eliminar platos del menú. 
 ('GET/menu') Platos y precios del menú. 
 
-Pedidos: Necesita autenticación.
+##### Pedidos: Necesita autenticación.
 
 ('POST/pedidos/add') Crear un nuevo pedido con platos del menú, ingresando también el método de pago. 
 ('GET/pedidos/all') Sólo para admin. Devuelve los pedidos realizados.
@@ -117,14 +117,14 @@ Pedidos: Necesita autenticación.
 
 #### TABLAS
 
-menu
+##### menu
 - id
 - meal
 - price
 - createdAt
 - updatedAt
 
-usuarios
+##### usuarios
 - id
 - username
 - fullname
@@ -136,7 +136,7 @@ usuarios
 - createdAt
 - updatedAt
 
-orders
+##### orders
 - id
 - paidMethod
 - state
@@ -145,14 +145,14 @@ orders
 - updatedAt
 - UserId
 
-tokens
+##### tokens
 - id
 - token
 - createdAt
 - updatedAt
 - UserId
 
-orders and meals
+##### orders and meals
 - createdAt
 - updatedAt
 - OrderId
@@ -169,7 +169,8 @@ npm start
 ### 4. ¡La base de datos ya está lista para ser usada!
 
 Puedes usar Postman y los endpoints para testarla, ingresando los campos requeridos a través del body. 
-Ejemplo
+
+#### Ejemplo:
 
 ('POST/usuarios/add') Creando un usuario no admin.
 
