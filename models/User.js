@@ -27,7 +27,7 @@ User.init({
             isNumeric: true
         }
     },
-    adress: {
+    address: {
         type: DataTypes.STRING,
         allowNull: false,
     },

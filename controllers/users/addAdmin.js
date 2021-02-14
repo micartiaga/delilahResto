@@ -24,12 +24,12 @@ route.post("/", async (req, res) => {
                 fullname: req.body.fullname,
                 email: req.body.email,
                 phone: req.body.phone,
-                adress: req.body.adress,
+                address: req.body.address,
                 password: newPass,
                 admin: "1"
             });
 
-            return res.json({ username: newUser.username, fullname: newUser.fullname, message: 'Se ha creado un nuevo admin.' });
+            return res.json({ username: newUser.username, fullname: newUser.fullname, email: newUser.email, phone: newUser.phone,  message: 'Se ha creado un nuevo admin.' });
         }
         catch (error) {
             console.log(error);

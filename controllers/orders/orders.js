@@ -10,7 +10,7 @@ route.get("/", async (req, res) => {
             {
                 include: [
                     { model: Product, attributes: ['meal', 'price'] },
-                    { model: User, attributes: ['fullname', 'adress'] }
+                    { model: User, attributes: ['fullname', 'address'] }
                 ],
                 attributes: ['id', 'paidMethod', 'createdAt', 'state', 'totalPrice']
             });

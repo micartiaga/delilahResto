@@ -11,7 +11,7 @@ route.put("/", async (req, res) => {
         };
 
         // PEDIR LA INFO QUE VA A EDITAR
-        if (!req.body.phone && !req.body.email && !req.body.adress && !req.body.fullname) {
+        if (!req.body.phone && !req.body.email && !req.body.address && !req.body.fullname) {
             return res.status(404).send('Agregar info para editar.')
         };
 
@@ -21,14 +21,14 @@ route.put("/", async (req, res) => {
         if (req.body.email) {
             usuario.email = req.body.email;
         }
-        if (req.body.adress) {
-            usuario.adress = req.body.adress;
+        if (req.body.address) {
+            usuario.address = req.body.address;
         }
         if (req.body.fullname) {
             usuario.fullname = req.body.fullname;
         }
 
-        await usuario.save({ fields: ['fullname', 'email', 'phone', 'adress'] });
+        await usuario.save({ fields: ['fullname', 'email', 'phone', 'address'] });
         await usuario.reload();
 
         return res.status(201).send('Usuario editado con éxito.');

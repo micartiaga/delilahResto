@@ -12,7 +12,7 @@ route.get("/", async (req, res) => {
         let usuario = await User.findOne(
             {
                 where: { username: username },
-                attributes: ['username', 'email', 'adress', 'fullname', 'phone'],
+                attributes: ['username', 'email', 'address', 'fullname', 'phone'],
                 include: [
                     {
                         model: Order,

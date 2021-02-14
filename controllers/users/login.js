@@ -28,7 +28,7 @@ route.get("/", async (req, res) => {
             });
 
             usuario.addToken(userToken);
-            return res.status(201).json({ username: username, fullname: usuario.fullname, email:usuario.email, phone:usuario.phone, adress:usuario.adress, accessToken: accessToken })
+            return res.status(201).json({ username: username, fullname: usuario.fullname, email:usuario.email, phone:usuario.phone, address:usuario.address, accessToken: accessToken })
         }
     }
     catch (error) {

@@ -18,7 +18,7 @@ route.post("/", async (req, res) => {
       fullname: req.body.fullname,
       email: req.body.email,
       phone: req.body.phone,
-      adress: req.body.adress,
+      address: req.body.address,
       password: newPass,
     });
 
